@@ -1,0 +1,22 @@
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="ArrayContainsString" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v12.0.dll">
+    <ParameterGroup>
+      <String ParameterType="System.String" Required="true" />
+      <Array ParameterType="System.String[]" Required="true" />
+      <Result ParameterType="System.Boolean" Output="true" />
+    </ParameterGroup>
+    <Task>
+      <Code Language="cs">
+        <![CDATA[
+          Result = false;
+
+          foreach(var test in Array)
+          {
+            if(test == String)
+              Result = true;
+          }
+        ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+</Project>

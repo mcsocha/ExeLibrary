@@ -1,0 +1,38 @@
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="GetAllTargets" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v12.0.dll">
+    <ParameterGroup>
+      <ProjectFile ParameterType="System.String" Required="true"/>
+      <TargetsOut ParameterType="Microsoft.Build.Framework.ITaskItem[]" Output="true"/>
+    </ParameterGroup>
+    <Task>
+      <Reference Include="System.Xml"/>
+      <Reference Include="Microsoft.Build"/>
+      <Reference Include="Microsoft.Build.Framework"/>
+      <Using Namespace="Microsoft.Build.Evaluation"/>
+      <Using Namespace="Microsoft.Build.Execution"/>
+      <Using Namespace="Microsoft.Build.Utilities"/>
+      <Using Namespace="Microsoft.Build.Framework"/>
+      <Code Language="cs">
+        <![CDATA[
+          var project = new Project(ProjectFile);
+
+          var taskItems = new List<ITaskItem>(project.Targets.Count);
+          foreach (KeyValuePair<string, ProjectTargetInstance> kvp in project.Targets)
+          {
+            var target = kvp.Value;
+            var metadata = new Dictionary<string, string>
+                            {
+                              {"Condition", target.Condition},
+                              {"Inputs", target.Inputs},
+                              {"Outputs", target.Outputs},
+                              {"DependsOnTargets", target.DependsOnTargets}
+                            };
+            taskItems.Add(new TaskItem(kvp.Key, metadata));
+          }
+
+          TargetsOut = taskItems.ToArray();
+      ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+</Project>

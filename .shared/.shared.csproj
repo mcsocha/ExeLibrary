@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{728D21C0-21BD-4FC0-85BF-B970904158B3}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="DotProj.proj" />
+    <None Include="Footer.proj" />
+    <None Include="Tasks\ArrayContainsString.proj" />
+    <None Include="Tasks\GetAllTargets.proj" />
+    <None Include="Tasks\SetAppSetting.proj" />
+  </ItemGroup>
+  <Import Project="..\.shared\DotProj.proj" />
+</Project>

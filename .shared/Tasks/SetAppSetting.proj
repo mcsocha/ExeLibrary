@@ -1,0 +1,71 @@
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!--Determine if Input equals one of the provided strings in the Tests item list-->
+	<UsingTask TaskName="SetAppSetting" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v12.0.dll">
+		<ParameterGroup>
+			<ProjectDirectory ParameterType="System.String" Required="false" />
+			<FullConfigPath ParameterType="System.String" Required="false" />
+			<Key ParameterType="System.String" Required="true" />
+			<Value ParameterType="System.String" Required="true" />
+		</ParameterGroup>
+		<Task>
+			<Reference Include="System"/>
+			<Reference Include="System.Xml"/>
+			<Reference Include="System.Xml.Linq"/>
+			<Using Namespace="System.Linq"/>
+			<Using Namespace="System.Xml.Linq"/>
+			<Using Namespace="System.IO"/>
+			<Code Language="cs">
+				<![CDATA[
+					if(!Directory.Exists(ProjectDirectory))
+				    throw new Exception(string.Format("Directory '{0}' doesn't exist.", ProjectDirectory));
+			    else
+			    {
+				    string configPath = null;
+				    string webConfigPath = Path.Combine(ProjectDirectory, "Web.Config");
+				    string appConfigPath = Path.Combine(ProjectDirectory, "App.Config");
+				    string sharedConfigPath = Path.Combine(ProjectDirectory, "Shared.Config");
+				    bool webExists = File.Exists(webConfigPath);
+				    bool appExists = File.Exists(appConfigPath);
+				    bool sharedExists = File.Exists(sharedConfigPath);
+				    XDocument configDoc;
+
+				    int numConfigFiles = 0;
+				    if(appExists) numConfigFiles++;
+				    if(webExists) numConfigFiles++;
+				    if(sharedExists) numConfigFiles++;
+
+				    if(numConfigFiles != 1)
+					    throw new Exception(string.Format("You must have have 1 config file in your project root: A Web, App or Shared .Config.  Actual number of config file(s) = {0}.", numConfigFiles));
+				    else if(appExists)
+					    configPath = appConfigPath;
+				    else if(webExists)
+					    configPath = webConfigPath;
+				    else if(sharedExists)
+					    configPath = sharedConfigPath;
+				    else
+					    throw new NotImplementedException("Unknown error, possibly an invalid config file path.");
+
+				    configDoc = XDocument.Load(configPath);
+
+				    XAttribute projDirAttr = null;
+
+				    try
+				    {
+					    projDirAttr = configDoc.Root.Elements("appSettings").Elements("add")
+					    .First(a => a.Attribute("key").Value == Key)
+					    .Attribute("value");
+				    }
+				    catch(Exception e)
+				    {
+					    throw new Exception(string.Format("AppSetting key:{0} doesn't exist or has malformed xml.", Key), e);
+				    }
+
+				    projDirAttr.Value = Value;
+
+				    configDoc.Save(configPath, SaveOptions.None);
+			    }
+				]]>
+			</Code>
+		</Task>
+	</UsingTask>
+</Project>

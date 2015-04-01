@@ -1,26 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-
-namespace CleanDirectories
+﻿namespace CleanDirectories
 {
-    class Program
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    class CleanDirectories
     {
         /// <summary>
         /// Delete all directories in a given path (args[0]), and optionally use a search pattern to filter the names of the directories to be deleted (args[1])
         /// </summary>
         /// <param name="args"></param>
-        [STAThread]
         static void Main(string[] args)
         {
             try
             {
                 Console.BufferWidth = Console.BufferWidth < 120 ? 120 : Console.BufferWidth;
+                Console.BufferHeight = Console.BufferHeight < 300 ? 300 : Console.BufferHeight;
                 Console.BufferHeight = Console.BufferHeight < 300 ? 300 : Console.BufferHeight;
 
                 if(args == null || args.Length == 0 || args.Length > 2)
