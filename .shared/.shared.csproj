@@ -4,8 +4,12 @@
     <ProjectGuid>{728D21C0-21BD-4FC0-85BF-B970904158B3}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="DotProj.proj" />
-    <None Include="Footer.proj" />
+    <None Include="DotProj.proj">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MakeExe.proj">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Tasks\ArrayContainsString.proj" />
     <None Include="Tasks\GetAllTargets.proj" />
     <None Include="Tasks\SetAppSetting.proj" />

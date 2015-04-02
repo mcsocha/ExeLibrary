@@ -1,7 +1,7 @@
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-  <Target Name="DummyBuild" BeforeTargets="Build"/>
-  <Target Name="DummyClean" BeforeTargets="Clean"/>
-  <Target Name="DummyRebuild" BeforeTargets="Rebuild"/>
+  <Target Name="Build"/>
+  <Target Name="Clean"/>
+  <Target Name="Rebuild"/>
   
 </Project>

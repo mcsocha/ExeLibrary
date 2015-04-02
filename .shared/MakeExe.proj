@@ -1,0 +1,13 @@
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  
+  <PropertyGroup>
+    <CscExePath>$(MSBuildBinPath)\csc.exe</CscExePath>
+    <CmdText>&quot;$(CscExePath)&quot; /target:exe /out:$(OutputPath)\$(AssemblyName).exe *.cs</CmdText>
+  </PropertyGroup>
+
+  <Target Name="MakeExe" AfterTargets="Build">
+    <Message Text="Executing: $(CmdText)" />
+    <Exec Command="$(CmdText)" />    
+  </Target>
+  
+</Project>
