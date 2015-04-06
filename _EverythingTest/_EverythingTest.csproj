@@ -63,6 +63,9 @@
       <Name>RegexExcape</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Everything.playlist" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

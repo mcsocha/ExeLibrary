@@ -7,7 +7,7 @@ namespace _EverythingTest
     public class RegexEscapeTest
     {
         [TestMethod]
-        public void RegexEscapeTest_Test1()
+        public void RegexEscape_Test1()
         {
         }
     }

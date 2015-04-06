@@ -7,7 +7,7 @@ namespace _EverythingTest
     public class GoogleItTest
     {
         [TestMethod]
-        public void GoogleItTest_Test1()
+        public void GoogleIt_Test1()
         {
         }
     }

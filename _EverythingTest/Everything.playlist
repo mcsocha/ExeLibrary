@@ -1,0 +1,5 @@
+<Playlist Version="1.0">
+  <Add Test="_EverythingTest.GoogleItTest.GoogleIt_Test1" />
+  <Add Test="_EverythingTest.RegexEscapeTest.RegexEscape_Test1" />
+  <Add Test="_EverythingTest.CleanDirectoriesTest.CleanDirectories_Test1" />
+</Playlist>
