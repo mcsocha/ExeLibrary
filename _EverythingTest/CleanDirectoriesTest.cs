@@ -9,11 +9,8 @@ namespace _EverythingTest
         [TestMethod]
         public void CleanDirectories_Test1()
         {
-            CleanDirectories.CleanDirectories.Main(new string[]
-            {
-                @"C:\source\VSO\MLM|C:\source\VSO\MLM|C:\source\VSO\MLM\.nuget\packages",
-                "bin|obj|*"
-            }, true);
+            var dir = @"C:\source\VSO\MLM";
+            CleanDirectories.CleanDirectories.Main(new string[] { dir, "obj", "-r"}, true);
         }
     }
 }
