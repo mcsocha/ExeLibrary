@@ -30,6 +30,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -44,6 +45,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="GetAppSettingTest .cs" />
+    <Compile Include="ToggleHiddenFoldersTest.cs" />
+    <Compile Include="SetAppSettingTest.cs" />
     <Compile Include="RegexEscapeTest.cs" />
     <Compile Include="GoogleItTest.cs" />
     <Compile Include="CleanDirectoriesTest.cs" />
@@ -54,6 +58,10 @@
       <Project>{f6bbc083-1659-4b83-9a1b-a3aace99df95}</Project>
       <Name>CleanDirectories</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GetAppSetting\GetAppSetting.csproj">
+      <Project>{064509e0-cd59-4a44-8ae4-d22ad9321575}</Project>
+      <Name>GetAppSetting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GoogleIt\GoogleIt.csproj">
       <Project>{cc5a1f70-f427-4fd6-9d70-cd68cbda2e68}</Project>
       <Name>GoogleIt</Name>
@@ -61,6 +69,14 @@
     <ProjectReference Include="..\RegexExcape\RegexExcape.csproj">
       <Project>{7412ef58-3f97-4eda-8764-57ff6f4a3e8a}</Project>
       <Name>RegexExcape</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SetAppSetting\SetAppSetting.csproj">
+      <Project>{20f4d314-8dd8-4f95-b795-38aab13db7d0}</Project>
+      <Name>SetAppSetting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ToggleHiddenFolders\ToggleHiddenFolders.csproj">
+      <Project>{9aa6201d-f565-4130-85b8-86f1e950a57f}</Project>
+      <Name>ToggleHiddenFolders</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
