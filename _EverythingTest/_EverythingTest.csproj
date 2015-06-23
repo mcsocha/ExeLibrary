@@ -46,6 +46,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="GetAppSettingTest .cs" />
+    <Compile Include="MkNewCmdTest.cs" />
     <Compile Include="ToggleHiddenFoldersTest.cs" />
     <Compile Include="SetAppSettingTest.cs" />
     <Compile Include="RegexEscapeTest.cs" />
@@ -66,6 +67,10 @@
       <Project>{cc5a1f70-f427-4fd6-9d70-cd68cbda2e68}</Project>
       <Name>GoogleIt</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MkNewCmd\MkNewCmd.csproj">
+      <Project>{668294a7-c374-4a46-bff6-c73a581b1c3f}</Project>
+      <Name>MkNewCmd</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RegexExcape\RegexExcape.csproj">
       <Project>{7412ef58-3f97-4eda-8764-57ff6f4a3e8a}</Project>
       <Name>RegexExcape</Name>
@@ -80,7 +85,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Everything.playlist" />
+    <None Include="..\.shared\App.Config">
+      <Link>App.Config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

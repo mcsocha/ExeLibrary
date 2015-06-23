@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace _EverythingTest
 {
@@ -10,7 +9,7 @@ namespace _EverythingTest
         public void CleanDirectories_Test1()
         {
             var dir = @"C:\source\VSO\MLM";
-            CleanDirectories.CleanDirectories.Main(new string[] { dir, "obj", "-r"}, true);
+            CleanDirectories.CleanDirectories.Test(new string[] { dir, "obj", "-r"});
         }
     }
 }

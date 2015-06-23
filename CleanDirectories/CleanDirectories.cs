@@ -1,12 +1,8 @@
 ﻿namespace CleanDirectories
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
-    using System.Linq;
-    using System.Collections.Generic;
-    using System.Text;
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
     using System.Text;
@@ -145,10 +141,10 @@
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey(true);
         }
-    
-        public static void Main(string[] args, bool testing)
+
+        public static void Test(string[] args)
         {
-            _testing = testing;
+            _testing = true;
             Main(args);
         }
     }

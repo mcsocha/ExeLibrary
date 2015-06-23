@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SetAppSetting")]
+[assembly: AssemblyTitle("MkNewCmd")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SetAppSetting")]
+[assembly: AssemblyProduct("MkNewCmd")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bf556de6-d829-4278-9118-e98d2e0833e9")]
+[assembly: Guid("e9379d6e-0708-4023-81d5-45a7ef8e8e6f")]
 
 // Version information for an assembly consists of the following four values:
 //

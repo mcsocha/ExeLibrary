@@ -14,5 +14,10 @@
     <None Include="Tasks\GetAllTargets.proj" />
     <None Include="Tasks\SetAppSetting.proj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
   <Import Project="..\.shared\DotProj.proj" />
 </Project>

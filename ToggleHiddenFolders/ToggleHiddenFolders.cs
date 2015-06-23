@@ -1,17 +1,7 @@
 ﻿namespace ToggleHiddenFolders
 {
-    using System;
-    using System.IO;
-    using System.Linq;
-    using System.Collections.Generic;
-    using System.Text;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Reflection;
-    using System.Text;
-    using System.Xml.Linq;
     using Microsoft.Win32;
+    using System;
     using System.Runtime.InteropServices;
 
 

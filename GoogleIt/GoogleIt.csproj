@@ -37,6 +37,12 @@
     <Compile Include="GoogleIt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.shared\App.Config">
+      <Link>App.Config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\.shared\MakeExe.proj" />
 </Project>
