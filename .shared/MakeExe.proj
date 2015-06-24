@@ -2,7 +2,7 @@
   
   <PropertyGroup>
     <CscExePath>$(MSBuildBinPath)\csc.exe</CscExePath>
-    <CmdText>&quot;$(CscExePath)&quot; /target:exe /out:$(OutputPath)\$(AssemblyName).exe *.cs</CmdText>
+    <CmdText>&quot;$(CscExePath)&quot; /target:exe /out:%EXELIB%\$(AssemblyName).exe *.cs</CmdText>
   </PropertyGroup>
 
   <Target Name="MakeExe" AfterTargets="Build">

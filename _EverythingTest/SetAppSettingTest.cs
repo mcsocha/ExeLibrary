@@ -10,7 +10,7 @@ namespace _EverythingTest
         public void SetAppSetting_Test1()
         {
             var dir = @"C:\source\VSO\MLM\.shared\SharedAppSettings.Config";
-            SetAppSetting.SetAppSetting.Main(new string[] { dir, "SolutionDirectory", DateTime.Now.ToShortDateString()}, true);
+            SetAppSetting.SetAppSetting.Test(new string[] { dir, "SolutionDirectory", DateTime.Now.ToShortDateString()});
         }
     }
 }

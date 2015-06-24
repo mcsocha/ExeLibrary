@@ -67,9 +67,9 @@
             Console.ReadKey(true);
         }
     
-        public static void Main(string[] args, bool testing)
+        public static void Test(string[] args)
         {
-            _testing = testing;
+            _testing = true;
             Main(args);
         }
     }
