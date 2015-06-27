@@ -24,7 +24,7 @@
                 //not using Regex.Escape() because it's incompatible with grepWin's regex version
                 text = text.Replace("\\", "\\\\").Replace("$", "\\$").Replace(".", "\\.").Replace("^", "\\^")
                     .Replace("(", "\\(").Replace(")", "\\)").Replace("{", "\\{").Replace("}", "\\}").Replace("*", "\\*")
-                    .Replace("\r\n", "\\r\\n").Replace("?", "\\?").Replace("[", "\\[").Replace("]", "\\]");
+                    .Replace("\r\n", "\\r\\n").Replace("?", "\\?").Replace("[", "\\[").Replace("]", "\\]").Replace("|", "\\|");
 
                 Clipboard.SetText(text);
                 Console.WriteLine(string.Format("Your clipboard's text was Regex escaped to: {0}", text));
