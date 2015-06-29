@@ -30,14 +30,12 @@ namespace MkNewCmd
             var path = Path.Combine(customCmdsPath, filename);
             using(var writer = new StreamWriter(path, false))
             {
-                writer.WriteLine(@"::ex path1: " + userprofile);
-                writer.WriteLine(@"::ex path2: C:\Program Files (x86)");
-                writer.WriteLine("start \"\" \"your path here\"");
+                writer.WriteLine("start \"\" \"\"");
                 writer.WriteLine("exit");
             }
-            
+
+            Process.Start(new ProcessStartInfo("explorer.exe", customCmdsPath));
             Process.Start(new ProcessStartInfo("notepad.exe", path));
-            Process.Start(new ProcessStartInfo("cmds"));
         }
 
         public static void Test(string filename)

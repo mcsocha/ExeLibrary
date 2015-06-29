@@ -1,5 +1,9 @@
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
   <Target Name="Build"/>
   <Target Name="Clean"/>
   <Target Name="Rebuild"/>
