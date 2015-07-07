@@ -75,6 +75,10 @@
       <Project>{7412ef58-3f97-4eda-8764-57ff6f4a3e8a}</Project>
       <Name>RegexExcape</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RegIO\RegIO.csproj">
+      <Project>{a084bc6d-2aaf-4e0d-975e-c69132a32869}</Project>
+      <Name>RegIO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SetAppSetting\SetAppSetting.csproj">
       <Project>{20f4d314-8dd8-4f95-b795-38aab13db7d0}</Project>
       <Name>SetAppSetting</Name>

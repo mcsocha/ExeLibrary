@@ -4,6 +4,12 @@
     <ProjectGuid>{728D21C0-21BD-4FC0-85BF-B970904158B3}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="..\.gitattributes">
+      <Link>.gitattributes</Link>
+    </None>
+    <None Include="..\.gitignore">
+      <Link>.gitignore</Link>
+    </None>
     <None Include="DotProj.proj">
       <SubType>Designer</SubType>
     </None>
@@ -18,6 +24,17 @@
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\ClavierSetup32.exe">
+      <Link>ClavierSetup32.exe</Link>
+    </Content>
+    <Content Include="..\ClavierSetup64.exe">
+      <Link>ClavierSetup64.exe</Link>
+    </Content>
+    <Content Include="..\README.txt">
+      <Link>README.txt</Link>
+    </Content>
   </ItemGroup>
   <Import Project="..\.shared\DotProj.proj" />
 </Project>

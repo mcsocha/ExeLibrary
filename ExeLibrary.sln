@@ -7,15 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = ".nuget", ".nuget\.nuget.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = ".shared", ".shared\.shared.csproj", "{728D21C0-21BD-4FC0-85BF-B970904158B3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{33EBA6B1-CB66-41EE-93B1-3F0A7C5AC71C}"
-	ProjectSection(SolutionItems) = preProject
-		.gitattributes = .gitattributes
-		.gitignore = .gitignore
-		ClavierSetup32.exe = ClavierSetup32.exe
-		ClavierSetup64.exe = ClavierSetup64.exe
-		README.txt = README.txt
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_EverythingTest", "_EverythingTest\_EverythingTest.csproj", "{E48CA38E-5297-43C0-ADEA-8E4E48BF2B18}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanDirectories", "CleanDirectories\CleanDirectories.csproj", "{F6BBC083-1659-4B83-9A1B-A3AACE99DF95}"
@@ -42,18 +33,22 @@ Global
 		Release|Mixed Platforms = Release|Mixed Platforms
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Release|Any CPU.ActiveCfg = Debug|x86
-		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Release|Mixed Platforms.ActiveCfg = Debug|x86
-		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Release|Mixed Platforms.Build.0 = Debug|x86
-		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Release|Any CPU.ActiveCfg = Debug|x86
-		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Release|Mixed Platforms.ActiveCfg = Debug|x86
-		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Release|Mixed Platforms.Build.0 = Debug|x86
+		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F964E9A5-76E4-4D78-90E8-3ABE0A6B46EA}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{728D21C0-21BD-4FC0-85BF-B970904158B3}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
 		{E48CA38E-5297-43C0-ADEA-8E4E48BF2B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E48CA38E-5297-43C0-ADEA-8E4E48BF2B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E48CA38E-5297-43C0-ADEA-8E4E48BF2B18}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

@@ -5,16 +5,13 @@
     using System.Linq;
     using System.Xml.Linq;
 
-
     public class GetAppSetting
     {
-        private static bool _testing = false;
-
         /// <summary>
         /// Get the app setting with the given key in the given config xml file.
         /// </summary>
         /// <param name="args">
-        /// args[0] = configPath; args[1] = key; args[2] = value;<para/>
+        /// args[0] = configPath; args[1] = key;<para/>
         /// </param>
         public static void Main(string[] args)
         {

@@ -6,7 +6,10 @@ using System.IO;
 
 namespace RegIO
 {
-    public class Program
+    /// <summary>
+    /// Read/write a registry key
+    /// </summary>
+    public class RegIO
     {
         private static bool _testing = false;
 
@@ -18,6 +21,10 @@ namespace RegIO
             var value = args.Length == 4 ? args[3] : "";
 
             //Registry.
+
+            if(_testing)
+            { //..dont show console etc...
+            }
         }
 
         public static void Test(string filename)

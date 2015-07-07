@@ -7,7 +7,9 @@
     using System.Reflection;
     using System.Text;
 
-
+    /// <summary>
+    /// Delete all folders within a directory.  There's options available for recursive parameter "-r" (include subfolders) or top level only "-t"
+    /// </summary>
     public class CleanDirectories
     {
         private class Options

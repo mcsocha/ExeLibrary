@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MkNewCmd;
 
-
 namespace _EverythingTest
 {
     [TestClass]
@@ -10,7 +9,7 @@ namespace _EverythingTest
         [TestMethod]
         public void MkNewCmd_Test1()
         {
-            Program.Test("DUMMY22");
+            MkNewCmd.MkNewCmd.Test("DUMMY22");
         }
     }
 }

@@ -8,9 +8,12 @@
 
     class GoogleIt
     {
+        /// <summary>
+        /// Open the default browser to google.com with search results (I think it's 9 max words allowed in the query for this tool)
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
-
             var debug = false;
             var debugOutPath = Path.Combine(Environment.CurrentDirectory, "googleIt.log");
             var debugOut = "";

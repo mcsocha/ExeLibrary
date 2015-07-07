@@ -4,7 +4,9 @@
     using System;
     using System.Runtime.InteropServices;
 
-
+    /// <summary>
+    /// Toggles the Windows view options property "View Hidden Items" on or off.
+    /// </summary>
     public class ToggleHiddenFolders
     {
         private static bool _testing = false;
@@ -36,7 +38,7 @@
         static void Main(string[] args)
         {
             IntPtr HWND_BROADCAST = new IntPtr(0xffff);
-            UInt32 WM_SETTINGCHANGE = 0x1A;
+            //UInt32 WM_SETTINGCHANGE = 0x1A; not used
             IntPtr NULL = IntPtr.Zero;
 
             RegistryKey key = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced");
@@ -58,6 +60,10 @@
             uint WM_COMMAND = 0x0111;
             IntPtr output= SendMessage(HWND_BROADCAST, WM_COMMAND, refresh, IntPtr.Zero);
             SHChangeNotify(HChangeNotifyEventID.SHCNE_ASSOCCHANGED, HChangeNotifyFlags.SHCNF_IDLIST, IntPtr.Zero, IntPtr.Zero);
+
+            if (_testing)
+            { //..dont show console etc...
+            }
         }
 
         private static void PromptAnyKey()

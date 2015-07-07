@@ -28,15 +28,18 @@
             if (!File.Exists(configPath))
                 throw new Exception(string.Format("File '{0}' doesn't exist.", configPath));
 
-            var configDoc = XDocument.Load(configPath);
+            var config = XDocument.Load(configPath);
 
             XAttribute projDirAttr = null;
 
             XElement appSettings;
-            if (configDoc.Root.Name.LocalName.ToLower() == "appsettings")
-                appSettings = configDoc.Root;
+            var rootTagName = config.Root.Name.LocalName.ToLower();
+            if (rootTagName == "appsettings")
+                appSettings = config.Root;
+            else if(rootTagName == "configuration")
+                appSettings = config.Root.Elements("appSettings").First();
             else
-                appSettings = configDoc.Root.Elements("appSettings").First();
+                throw new Exception(string.Format("Unknown root tag in xml file: '{0}'", rootTagName));
 
             var projDirSetting = appSettings.Elements("add").FirstOrDefault(a => a.Attribute("key").Value == key);
 
@@ -47,7 +50,7 @@
 
             projDirAttr.Value = value;
 
-            configDoc.Save(configPath, SaveOptions.None);
+            config.Save(configPath, SaveOptions.None);
 
             if (!_testing)
                 PromptAnyKey();

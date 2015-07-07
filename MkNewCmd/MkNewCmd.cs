@@ -5,7 +5,10 @@ using System.IO;
 
 namespace MkNewCmd
 {
-    public class Program
+    /// <summary>
+    /// Shows a cmd prompt helping you quickly create a new cmd in the CustomCmdsPath specified in the app.config. (cmd is intended to work with a keyboard shortcut util to open the prompt quickly then execute a common task)
+    /// </summary>
+    public class MkNewCmd
     {
         private static bool _testing = false;
 
