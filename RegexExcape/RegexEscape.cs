@@ -21,10 +21,22 @@
                 var text = Clipboard.GetText();
                 Console.WriteLine(string.Format("Your clipboard contained the following text: {0}", text));
 
-                //not using Regex.Escape() because it's incompatible with grepWin's regex version
-                text = text.Replace("\\", "\\\\").Replace("$", "\\$").Replace(".", "\\.").Replace("^", "\\^")
-                    .Replace("(", "\\(").Replace(")", "\\)").Replace("{", "\\{").Replace("}", "\\}").Replace("*", "\\*")
-                    .Replace("\r\n", "\\r\\n").Replace("?", "\\?").Replace("[", "\\[").Replace("]", "\\]").Replace("|", "\\|");
+                //http://regexhero.net/reference/
+
+                text = text
+                    .Replace("\\", "\\\\")
+                    .Replace(".", "\\.")
+                    .Replace("$", "\\$")                    
+                    .Replace("^", "\\^")
+                    .Replace("{", "\\{")
+                    .Replace("[", "\\[")
+                    .Replace("(", "\\(")
+                    .Replace("|", "\\|")
+                    .Replace(")", "\\)")
+                    .Replace("*", "\\*")
+                    .Replace("+", "\\+")
+                    .Replace("?", "\\?")
+                    .Replace("\r\n", "\\r\\n");
 
                 Clipboard.SetText(text);
                 Console.WriteLine(string.Format("Your clipboard's text was Regex escaped to: {0}", text));

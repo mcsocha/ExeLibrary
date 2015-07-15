@@ -14,15 +14,13 @@ namespace MkNewCmd
 
         public static void Main(string[] args)
         {
-            var customCmdsPathKey = ConfigurationManager.AppSettings["CustomCmdsPathKey"];
-            var customCmdsPath = Environment.GetEnvironmentVariable(customCmdsPathKey, EnvironmentVariableTarget.User);
-            var userprofile = Environment.GetEnvironmentVariable("USERPROFILE");
-            var defaultCmdsPath = ConfigurationManager.AppSettings["DefaultCmdsPath"];
+            var cmdsPath = Environment.GetEnvironmentVariable("CMDS", EnvironmentVariableTarget.User);
+            var userprofile = Environment.GetEnvironmentVariable("USERPROFILE", EnvironmentVariableTarget.User);
             
-            if(string.IsNullOrWhiteSpace(customCmdsPath))
+            if(string.IsNullOrWhiteSpace(cmdsPath))
             {
-                customCmdsPath = Path.Combine(userprofile, defaultCmdsPath);
-                Environment.SetEnvironmentVariable(customCmdsPathKey, customCmdsPath, EnvironmentVariableTarget.User);
+                cmdsPath = Path.Combine(userprofile, cmdsPath);
+                Environment.SetEnvironmentVariable("CMDS", cmdsPath, EnvironmentVariableTarget.User);
             }
 
             if(!_testing)
@@ -30,14 +28,14 @@ namespace MkNewCmd
 
             var filename = !_testing ? Console.ReadLine().Trim() + ".cmd" : args[0] + ".cmd";
 
-            var path = Path.Combine(customCmdsPath, filename);
+            var path = Path.Combine(cmdsPath, filename);
             using(var writer = new StreamWriter(path, false))
             {
                 writer.WriteLine("start \"\" \"\"");
                 writer.WriteLine("exit");
             }
 
-            Process.Start(new ProcessStartInfo("explorer.exe", customCmdsPath));
+            Process.Start(new ProcessStartInfo("explorer.exe", cmdsPath));
             Process.Start(new ProcessStartInfo("notepad.exe", path));
         }
 

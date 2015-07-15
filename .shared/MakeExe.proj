@@ -2,12 +2,14 @@
   
   <PropertyGroup>
     <CscExePath>$(MSBuildBinPath)\csc.exe</CscExePath>
-    <CmdText>&quot;$(CscExePath)&quot; /target:exe /out:%EXELIB%\$(AssemblyName).exe *.cs</CmdText>
+    <AppConfigPath>$(MSBuildProjectDirectory)\..\.shared\App.Config</AppConfigPath>
+    <CmdCompileText>&quot;$(CscExePath)&quot; /target:exe /out:$(CMDS)\$(AssemblyName).exe *.cs</CmdCompileText>
   </PropertyGroup>
 
   <Target Name="MakeExe" AfterTargets="Build">
     <Message Text="Executing: $(CmdText)" />
-    <Exec Command="$(CmdText)" />    
+    <Exec Command="$(CmdCompileText)" />
+    <Copy SourceFiles="$(AppConfigPath)" DestinationFiles="$(CMDS)\$(MSBuildProjectName).exe.config" />
   </Target>
   
 </Project>
