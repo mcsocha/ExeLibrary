@@ -23,20 +23,54 @@ namespace MkNewCmd
                 Environment.SetEnvironmentVariable("CMDS", cmdsPath, EnvironmentVariableTarget.User);
             }
 
-            if(!_testing)
-                Console.WriteLine("Enter the file name for the new cmd file w/o the '.cmd' extension:");
-
-            var filename = !_testing ? Console.ReadLine().Trim() + ".cmd" : args[0] + ".cmd";
-
-            var path = Path.Combine(cmdsPath, filename);
-            using(var writer = new StreamWriter(path, false))
+            var cmdName = "";
+            if (!_testing || args.Length == 0)
             {
-                writer.WriteLine("start \"\" \"\"");
-                writer.WriteLine("exit");
+                Console.WriteLine("Enter the name of the cmd:");
+                cmdName = Console.ReadLine().Trim();
+            }
+            else
+            {
+                cmdName = args[0];
             }
 
-            Process.Start(new ProcessStartInfo("explorer.exe", cmdsPath));
-            Process.Start(new ProcessStartInfo("notepad.exe", path));
+            if (File.Exists(Path.Combine(cmdsPath, string.Format("{0}.cmd", cmdName))))
+            {
+                Console.WriteLine("Error: cmd already exists..");
+                Console.ReadLine();
+                return;
+            }
+
+            if (File.Exists(Path.Combine(cmdsPath, string.Format("{0}.cmd", cmdName))))
+            {
+                Console.WriteLine("Error: cmd already exists..");
+                Console.ReadLine();
+                return;
+            }
+
+
+            var cmdFilename = string.Format("{0}.cmd", cmdName);
+            var scriptFilename = string.Format("{0}.csx", cmdName);
+
+            var cmdPath = Path.Combine(cmdsPath, cmdFilename);
+            var scriptPath = Path.Combine(cmdsPath, scriptFilename);
+
+            using (var writer = new StreamWriter(cmdPath, false))
+            {
+                writer.WriteLine(string.Format("scriptcs \"%CMDS%\\{0}.csx\" -- %1 %2 %3 %4 %5 %6 %7 %8 %9", cmdName));
+                writer.WriteLine("exit");
+            }
+            
+            using (var writer = new StreamWriter(scriptPath))
+            {
+                writer.WriteLine("using System;");
+                writer.WriteLine();
+                writer.WriteLine("var arg1 = Env.ScriptArgs[0];");
+                writer.WriteLine("var arg2 = Env.ScriptArgs[1];");
+            }
+
+            Process.Start(new ProcessStartInfo("notepad.exe", scriptPath));
+            Process.Start(new ProcessStartInfo("notepad.exe", cmdPath));
         }
 
         public static void Test(string filename)
